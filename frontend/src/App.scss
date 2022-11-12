@@ -1,3 +1,38 @@
+// @font-face {
+//   font-family: "KH";
+//   src: url("../public/assets/fonts/Kingdom_Hearts_Font.ttf");
+// }
+@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;700;900&display=swap');
+
 .App {
-  text-align: center;
+font-family: 'Merienda';  
+height: 100%;
+  display: grid;
+  grid-template-areas: "nav nav"
+                       "main main"
+                       "footer footer";
+  grid-template-columns:  1fr;
+  grid-template-rows: 60px 1fr 50px;
+  
+  nav {
+    background-color: rgb(118, 118, 212);
+    grid-area: nav;
+  }
+
+  main {
+    // background-color: antiquewhite;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    grid-area: main;
+    width: 90%;
+    margin: 0 auto;
+    background-image: url("https://cdn.wallpapersafari.com/49/68/b8qzY4.jpg");
+   
+  }
+
+  footer {
+    background-color: aquamarine;
+    grid-area: footer;
+  }
 }

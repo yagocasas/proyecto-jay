@@ -18,14 +18,24 @@ const Characters = () => {
     <div className="characters">
       {characters &&
         characters.map((char) => {
-          return <div key={char._id}>
-                    <h2>{char.name}</h2>
-                    <img src={char.img} alt={char.name} />
-                    <Link to={`/characters/${char.name}`}>Ver detalles</Link>
-                        
-
-                 </div>
-        })};
+          return (
+            <div
+              className={
+                char.role === "light"
+                  ? "card light"
+                  : char.role === "darkness"
+                  ? "card dark"
+                  : "card unknown"
+              }
+              key={char._id}
+            >
+              <h2>{char.name}</h2>
+              <img src={char.img} alt={char.name} />
+              <Link to={`/characters/${char.name}`}>Ver detalles</Link>
+            </div>
+          );
+        })}
+      ;
     </div>
   );
 };
