@@ -2,19 +2,16 @@ import "./App.scss";
 import Characters from "./components/Characters";
 import { Routes, Route } from "react-router-dom";
 import CharacterDetails from "./components/CharacterDetails";
-import Navbar from "./components/Navbar";
+import Home from "./components/Home";
 
 function App() {
   return (
-    <div className="App">
-      <Navbar/>
-      <main>
+    <div className="app">
         <Routes>
+          <Route path="/" element={<Home/>}/>
           <Route path="/characters" element={<Characters />} />
-          <Route path="characters/:name" element={<CharacterDetails />} />
+          <Route path="/characters/:name" element={<CharacterDetails />}/>
         </Routes>
-      </main>
-      <footer>FOOOTER</footer>
     </div>
   );
 }
