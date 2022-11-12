@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharacter } from '../redux/characters/characterFunctions';
+import ReusableButton from './Reusablebutton/Button';
 
 const CharacterDetails = () => {
     
@@ -14,6 +15,7 @@ const CharacterDetails = () => {
         dispatch(getCharacter(name));
     // eslint-disable-next-line react-hooks/exhaustive-deps
     },[]);
+
   return (
     <div>
         {isLoading && ("Cargando...")}
@@ -25,8 +27,8 @@ const CharacterDetails = () => {
                     <p>{characters.weapons}</p>
                     <p>{characters.role}</p>
                     <p>Componente Origin</p>
-                    <button onClick={() => navigate("/characters")}>Back</button>
-                 </div>}
+                    <ReusableButton texto='Back' funcion={() => navigate('/characters')} clase='back--button'/>
+                </div>}
     </div>
   )
 }
