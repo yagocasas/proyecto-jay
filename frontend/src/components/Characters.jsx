@@ -36,8 +36,6 @@ const Characters = () => {
               >
                 <h2>{char.name}</h2>
                 <img src={char.img} alt={char.name} />
-                  {/* <Link to={`/characters/${char.name}`}>Ver detalles</Link> */}
-                  {/* Preguntar a Santi */}
                   <ReusableButton texto={<Link to={`/characters/${char.name}`}>Ver detalles</Link>} clase='details--button'/>
               </div>
             );
