@@ -3,6 +3,7 @@ const User = require("./user.models");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const { generateSign } = require("../../utils/jwt/jwt");
+const { isAuth, isAdmin } = require('../../middlewares/auth');
 
 //* Todos los uruarios
 router.get("/", async (req, res) => {
@@ -55,5 +56,15 @@ router.post("/logout", async (req, res) => {
     return res.status(500).json(error);
   }
 });
+
+router.post("/checksession", [isAuth], (req, res, next) => {
+  console.log(req.headers.authorization);
+  try {
+    return res.status(200).json(req.user);
+  } catch (error) {
+    return res.status(500).json(error);
+  }
+});
+
 
 module.exports = router;

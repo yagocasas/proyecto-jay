@@ -1,4 +1,5 @@
 import React from 'react'
+import ButtonLogout from '../componentes/ButtonLogout'
 import Anchor from '../Linkreusable/Link'
 
 
@@ -15,8 +16,11 @@ const ReusableNavbar = ({clase}) => {
       {/* preguntar a santi */}
       {/* <Anchor texto='Detalles' type='navbar--link'/> */}
       </ul>
+      <ButtonLogout/>
     </nav>
   )
 }
+
+
 
 export default ReusableNavbar

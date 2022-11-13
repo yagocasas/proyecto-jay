@@ -6,7 +6,7 @@ import { newUser } from '../redux/auth/auth.actions';
 
 const Register = () => {
     const { register, handleSubmit, formState: {errors, isValid}} = useForm();
-    const navigate = useNavigate();
+    let navigate = useNavigate();
     const dispatch = useDispatch();
 
     const registerUser = (formdata) => {
@@ -19,7 +19,7 @@ const Register = () => {
         <label>
             e-mail
             <input
-          type="text"
+          type="email"
           name="email"
           {...register("email", {
             required: "Introduce un email, por favor",
@@ -28,7 +28,6 @@ const Register = () => {
               message: "Introduce un email más largo",
             },
             pattern: {
-              value: /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[A-Z]{2,4}$/,
               message: "Introduce un email con formato válido",
             },
           })}
@@ -42,9 +41,11 @@ const Register = () => {
         </label>
         <label>
         Password
-        <input type="text" name="password" {...register('password', {
+        <input type="password" name="password" {...register('password', {
             required: "Introduce tu contraseña",
-            pattern: {value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,}
+            pattern:{
+              value: /^[a-zA-Z][a-zA-Z0-9.-]{1,20}$/
+            }
         }) } />
       </label>
       {errors.password ? <p>Password incorrecto</p> : null}

@@ -60,7 +60,6 @@ const characters = [
     weapons: "darkness keyblade",
     img: "https://kh.wiki.gallery/images/thumb/1/19/Master_Xehanort_KHIII.png/1200px-Master_Xehanort_KHIII.png"
   },
- 
 ];
 
 mongoose.connect(DB_URL)
