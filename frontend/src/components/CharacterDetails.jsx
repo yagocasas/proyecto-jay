@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 import { getCharacter } from '../redux/characters/characterFunctions';
 import ReusableButton from './Reusablebutton/Button';
+import './styles/characterDetails.scss'
 
 const CharacterDetails = () => {
     
