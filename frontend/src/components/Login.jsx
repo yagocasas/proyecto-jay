@@ -3,6 +3,8 @@ import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
+import ReusableNavbar from "./Reusablenavbar/Navbar";
+import './styles/Login.scss';
 
 const Login = () => {
   const {
@@ -19,7 +21,14 @@ const Login = () => {
   };
 
   return (
-    <form onSubmit={handleSubmit(login)}>
+    <>
+    <ReusableNavbar clase='navbar--login'/>
+    <main className="div--main--login">
+    <div className="div--imagen--login">
+      <img src='/assets/imagenes/Trono.png' alt='Trono'></img>
+    </div>
+    <div className="div--form--login">
+      <form onSubmit={handleSubmit(login)}>
       <label>
         e-mail
         <input
@@ -41,12 +50,11 @@ const Login = () => {
         {errors.email.type === "required" && <p>{errors.email.message}</p>}
         {errors.email.type === "minLength" && <p>{errors.email.message}</p>}
         {errors.email.type === "pattern" && <p>{errors.email.message}</p>}
-      </> : null};
+      </> : null}
       <label>
         Password
         <input type="password" name="password" {...register('password', {
             required: "Introduce tu contraseña",
-           
         }) } />
       </label>
       {errors.password ? <p>Password incorrecto</p> : null}
@@ -60,7 +68,12 @@ const Login = () => {
       </label>
       {errors.userName ? <p>Username inválido</p> : null}
       <button type="submit" disabled={!isValid}>Enviar</button>
-    </form>
+      </form>
+    </div>
+      
+    </main>
+      </>
+    
   );
 };
 

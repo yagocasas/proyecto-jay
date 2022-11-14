@@ -1,10 +1,10 @@
-import { API } from "../../shared/services/api";
+import { API, API2 } from "../../shared/services/api";
 
-export const postNewCharacter = (formdata) => async (dispatch) => {
+export const postNewCharacter = (datos) => async (dispatch) => {
     dispatch({ type: "postingCharacter" });
     try {
-      console.log(formdata)
-      const res = await API.post("characters/create", formdata);
+      console.log(datos)
+      const res = await API2.post("characters/create", datos);
       console.log(res)
       dispatch({ type: "postCharacter" });
     } catch (error) {

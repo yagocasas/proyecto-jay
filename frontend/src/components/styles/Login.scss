@@ -1,0 +1,30 @@
+.navbar--login{
+        ul{
+            display: flex;
+            justify-content: flex-end;
+            list-style: none;
+            li{
+                text-decoration: none;
+                padding: 15px;
+            }
+        }
+        
+}
+.div--main--login{
+    display: flex;
+    flex-direction: row-reverse;
+    .div--imagen--login{
+        width: 350px;
+        height: 500px;
+        img{
+            width: 100%;
+            height: 100%;
+        }
+    }
+    .div--form--login{
+        form{
+            display: flex;
+            flex-direction: column;
+        }
+    }
+}

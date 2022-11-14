@@ -10,14 +10,14 @@ const NewCharacter = () => {
     let navigate = useNavigate(); //eliminar?
     const dispatch = useDispatch();
 
-    const postCharacter = (formdata) => {
+    const postCharacter = (datos) => {
         const formData = new FormData();
-        formData.append("nombre", formdata.name);
-        formData.append("gender", formdata.gender);
-        formData.append("role", formdata.role);
-        formData.append("weapons", formdata.weapons);
-        formData.append("img", formdata.img[0]);
-        dispatch(postNewCharacter(formdata, navigate))
+        formData.append("nombre", datos.name);
+        formData.append("gender", datos.gender);
+        formData.append("role", datos.role);
+        formData.append("weapons", datos.weapons);
+        formData.append("img", datos.img[0]);
+        dispatch(postNewCharacter(formData, navigate))
       };
 
   return (
