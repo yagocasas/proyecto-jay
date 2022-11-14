@@ -8,7 +8,7 @@ const Home = () => {
         <div className='div--home'>
             <img src="/assets/imagenes/khtitle.png" alt="headtitle" />
                 <ReusableNavbar clase='navbar--home'/>
-                {/* <Footer/>  Falta maquetación*/}
+                <Footer clase='footer--home' show='none'/>
         </div>
     )
 }

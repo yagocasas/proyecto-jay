@@ -22,6 +22,13 @@ const ReusableNavbar = ({clase}) => {
       {
         user && <li><ButtonLogout/></li>
       }
+      {
+        user?.rol === 'admin' && <> 
+        <li>
+        <Anchor nav='/editCharacter' texto='Editar Personaje' type='navbar--link'/>
+        </li>
+        </>
+      }
         
         
     
