@@ -1,52 +1,61 @@
-.div--home{
-    background-color: black;
-    height: 100vh;
-    width: 100%;
-    background-image: url(../../../public/assets/imagenes/MicrosoftTeams-image.png);
-    background-size: cover;
-    background-position: right;
-    .navbar--home{
+.div--home {
+  background-color: black;
+  height: 85vh;
+  width: 100%;
+  background-image: url(../../../public/assets/imagenes/MicrosoftTeams-image.png);
+  background-size: cover;
+  background-position: right;
+
+  .navbar--home {
     display: flex;
     flex-direction: column;
     padding: 100px;
-    padding-top: 200px;
-    
+    padding-top: 100px;
 
-    .botonlogout{
-        color: white;
-        font-weight: bolder;
-        font-size: 40px;
-        text-decoration: none;
-        background-color: transparent;
-        border: none;
-        font-family: "Merienda";
-        cursor: pointer;
-        margin-left: 35px;
-        text-align: left;
-
-        &:hover{
-            color: rgb(126, 6, 116);
-            transition:text-shadow 0.5s;
-            text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px, #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
-            }
-
+    img {
+      padding: 30px;
     }
-    .navbar--list{
-        list-style: none;
-        li .navbar--link{
+
+    .botonlogout {
+      color: white;
+      font-weight: bolder;
+      font-size: 40px;
+      text-decoration: none;
+      background-color: transparent;
+      border: none;
+      font-family: "Merienda";
+      cursor: pointer;
+      margin-left: 35px;
+      text-align: left;
+
+      &:hover {
+        color: rgb(126, 6, 116);
+        transition: text-shadow 0.5s;
+        text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+          #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px,
+          #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
+      }
+    }
+    .navbar--list {
+      list-style: none;
+      li .navbar--link {
         color: white;
         font-weight: bolder;
         font-size: 40px;
         text-decoration: none;
-        &:hover{
-            color: rgb(126, 6, 116);
-            transition:text-shadow 0.5s;
-            text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px, #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
-            }
+        &:hover {
+          color: rgb(126, 6, 116);
+          transition: text-shadow 0.5s;
+          text-shadow: #fff 0px 0px 5px, #fff 0px 0px 10px, #fff 0px 0px 15px,
+            #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px,
+            #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
         }
-        
-        
+      }
     }
-    }
+  }
+}
+
+.footer--home{
+    height: 15vh;
 }
 

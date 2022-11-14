@@ -11,7 +11,7 @@ const ReusableNavbar = ({clase}) => {
   return (
     <nav className={clase}>
       <ul className='navbar--list'>
-      <li><Anchor nav='/' texto='Home' type='navbar--link'/></li>
+      <li><Anchor nav='/' texto='Inicio' type='navbar--link'/></li>
         <li><Anchor nav='/characters' texto='Personajes' type='navbar--link'/></li>
       {
         !user && <>

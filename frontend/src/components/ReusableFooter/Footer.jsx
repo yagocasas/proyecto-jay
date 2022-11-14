@@ -8,7 +8,7 @@ const Footer = ({clase, show}) => {
         <h2>
           PROYECTO CREADO POR: <span className="jay">JAY</span>
         </h2>
-        <div  className="gits" style={{display:{show}}}>
+        <div className="gits" style={{display:{show}}}>
           <a href="https://github.com/Jeronimofe">JERO</a>
           <a href="https://github.com/DarkoGL">ADOLFO</a>
           <a href="https://github.com/yagocasas">YAGO</a>
