@@ -2,23 +2,82 @@
 //   font-family: "KH";
 //   src: url("../public/assets/fonts/Kingdom_Hearts_Font.ttf");
 // }
-@import url('https://fonts.googleapis.com/css2?family=Merienda:wght@300;700;900&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Merienda:wght@300;700;900&display=swap");
 
 .app {
-font-family: 'Merienda';  
-height: 100%;
-  .container{
+  font-family: "Merienda";
+  height: 100%;
+
+  .container {
     display: grid;
-  grid-template-areas: "nav nav"
-                       "main main"
-                       "footer footer";                   
-  grid-template-columns:  1fr;
-  grid-template-rows: 60px 1fr 50px;
-  
+    grid-template-areas:
+      "nav nav"
+      "main main"
+      "footer footer";
+    grid-template-columns: 1fr;
+    grid-template-rows: 60px 1fr 50px;
+
     nav {
-    background-color: rgb(118, 118, 212);
-    grid-area: nav;
-  }
+      background-color: rgb(6, 6, 44);
+      grid-area: nav;
+
+      ul {
+        display: flex;
+        justify-content: flex-end;
+        margin-right: 20px;
+
+        li {
+          list-style: none;
+          border: 1px solid white;
+          margin: 10px;
+          width: 150px;
+          padding: 5px;
+          border-radius: 10px;
+          text-align: center;
+          transition: ease 1s;
+          cursor: pointer;
+
+          a {
+            color: white;
+            text-decoration: none;
+            font-weight: 700;
+            transition: ease 1s;
+          }
+          &:hover {
+            background-color: white;
+            border-color: rgb(6, 6, 44);
+            transition: ease 1s;
+
+            a {
+              color: rgb(6, 6, 44);
+              transition: ease 1s;
+            }
+          }
+        }
+      }
+      .botonlogout {
+        float: right;
+        margin-right: 30px;
+        border: 1px solid white;
+        width: 150px;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        transition: ease 1s;
+        cursor: pointer;
+        color: white;
+        font-weight: 700;
+        background-color: rgb(6, 6, 44);
+        font-family: "Merienda";
+
+        &:hover {
+          background-color: white;
+          border-color: rgb(6, 6, 44);
+          transition: ease 1s;
+          color: rgb(6, 6, 44);
+        }
+      }
+    }
 
     main {
       // background-color: antiquewhite;
@@ -27,16 +86,11 @@ height: 100%;
       flex-direction: column;
       align-items: center;
       grid-area: main;
-      width: 100%;
+      width: 80%;
       margin: 0 auto;
+      margin-top: 90px;
       background-image: url("https://cdn.wallpapersafari.com/49/68/b8qzY4.jpg");
-    } 
-    footer {
-    background-color: aquamarine;
-    grid-area: footer;
-  }
-  }
+    }
     
-
- 
+  }
 }
