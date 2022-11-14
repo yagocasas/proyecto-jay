@@ -47,7 +47,7 @@ const Login = () => {
         Password
         <input type="text" name="password" {...register('password', {
             required: "Introduce tu contraseña",
-            pattern: {value: /^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#$%^&*_=+-]).{8,12}$/,} 
+            pattern: {value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/,} 
         }) } />
       </label>
       {errors.password ? <p>Password incorrecto</p> : null}
@@ -55,7 +55,7 @@ const Login = () => {
         Username
         <input type="text" name="userName" {...register("userName", {
             required: "Introduce tu nombre de usuario",
-            pattern: /^[a-zA-Z][a-zA-Z0-9-_\.]{1,20}$/,
+            pattern: {value: /^[a-zA-Z][a-zA-Z0-9-_.]{1,20}$/},
         })} />
       </label>
       {errors.userName ? <p>Username inválido</p> : null}
