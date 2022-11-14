@@ -3,7 +3,6 @@ import { useDispatch } from "react-redux";
 import { postNewCharacter } from '../../../../redux/Post/NewCharacterFunctions';
 import { useForm } from 'react-hook-form';
 import { useNavigate } from 'react-router-dom';
-import { newUser } from '../redux/auth/auth.actions';
 
 const NewCharacter = () => {
 
@@ -12,54 +11,60 @@ const NewCharacter = () => {
     const dispatch = useDispatch();
 
     const postCharacter = (formdata) => {
-        dispatch(postNewCharacter(formdata, navigate));
-    };
+        const formData = new FormData();
+        formData.append("nombre", formdata.name);
+        formData.append("gender", formdata.gender);
+        formData.append("role", formdata.role);
+        formData.append("weapons", formdata.weapons);
+        formData.append("img", formdata.img[0]);
+        dispatch(postNewCharacter(formdata, navigate))
+      };
 
   return (
-         <form onSubmit= {handleSubmit(postCharacter)}>
+          <form onSubmit= {handleSubmit(postCharacter)}>
         <label>
-            e-mail
+            Nombre
             <input
-          type="email"
-          name="email"
-          {...register("email", {
-            required: "Introduce un email, por favor",
-            minLength: {
-              value: 5,
-              message: "Introduce un email más largo",
-            },
-            pattern: {
-              message: "Introduce un email con formato válido",
-            },
+          type="text"
+          name="nombre"
+          {...register("name", {
+            // required: "El personaje debe contener un nombre",
           })}
         />
-          {errors.email ? <>
-        {errors.email.type === "required" && <p>{errors.email.message}</p>}
-        {errors.email.type === "minLength" && <p>{errors.email.message}</p>}
-        {errors.email.type === "pattern" && <p>{errors.email.message}</p>}
-        {/*cómo manejamos que ya exista un mail? */}
+          {errors.nombre ? <>
+        {errors.nombre.type === "required" && <p>{errors.nombre.message}</p>}
       </> : null};
         </label>
         <label>
-        Password
-        <input type="password" name="password" {...register('password', {
-            required: "Introduce tu contraseña",
-            pattern:{
-              value: /^[a-zA-Z][a-zA-Z0-9.-]{1,20}$/
-            }
+        Genero
+        <input type="text" name="gender" {...register('gender', {
+            // required: "Introduce un genero",
         }) } />
       </label>
-      {errors.password ? <p>Password incorrecto</p> : null}
-
+      {errors.gender ? <p>Intruduce un género valido</p> : null}
       <label>
-        Username
-        <input type="text" name="userName" {...register("userName", {
-            required: "Introduce tu nombre de usuario",
-            pattern: /^[a-zA-Z][a-zA-Z0-9.-]{1,20}$/,
+        Role
+        <input type="text" name="role" {...register("role", {
+            // required: "Introduce un role valido"
         })} />
       </label>
-      {errors.userName ? <p>Username inválido</p> : null}
-      <button type="submit" disabled={!isValid}>Enviar</button>
+      {errors.role ? <p>Role invalido</p> : null}
+      <label>
+        Arma
+        <input type="text" name="weapons" {...register("weapons", {
+            // required: "Introduce un arma valida"
+        })} />
+      </label>
+      {errors.weapons ? <p>Arma inválido</p> : null}
+    <label>
+        Imagen
+        <input type="file" name="img" {...register("img", {
+            // required: "Introduce una imagen"
+        })} />
+      </label>
+      {errors.img ? <p>Imagen inválida</p> : null}
+
+      <button type="submit" >Enviar</button>
     </form>
   )
 }

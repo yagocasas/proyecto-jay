@@ -41,6 +41,7 @@ router.get('/getbyname/:name', async (req, res) =>{
 router.post("/create", upload.single('img') ,async(req, res) =>{  
   try { 
     const character = req.body;
+    console.log(req.file)
     if (req.file) {
       character.img = req.file.path;
     }
