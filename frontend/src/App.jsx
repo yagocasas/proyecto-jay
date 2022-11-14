@@ -8,6 +8,7 @@ import { useEffect } from "react";
 import { checkSession } from "./redux/auth/auth.actions";
 import Login from "./components/Login";
 import Register from "./components/Register";
+import AuthRoute from "./components/componentes/authRoute";
 
 function App() {
   const dispatch = useDispatch();
@@ -21,8 +22,9 @@ function App() {
     <div className="app">
         <Routes>
           <Route path="/" element={<Home/>}/>
-          <Route path="/characters" element={<Characters />} />
+          <Route path="/characters" element={<Characters />}/>
           <Route path="/characters/:name" element={<CharacterDetails />}/>
+          {/*para maquetar vas a necesitar sacar el authroute*/}{/*<AuthRoute component=*/}
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
         </Routes>

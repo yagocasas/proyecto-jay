@@ -1,6 +1,67 @@
 .details--button{
-    background-color: blue;
+    padding-top: 10px;
+    padding: 5px;
+    border-radius: 20px;
+    width: 200px;
+    align-self: center;
+    cursor: pointer;
+
+    a{
+        text-decoration: none;
+        font-weight: 700;
+        font-size: 20px; 
+    }
 }
+.button-light{
+    background-color: #ccc;
+    border: 3px solid  rgb(158, 141, 57);
+    transition: ease 1s;
+
+    a{
+        color: rgb(158, 141, 57);
+        transition: ease 1s;      
+    }
+
+    &:hover{
+        background-color:  rgb(158, 141, 57);
+        border: 3px solid  rgb(161, 158, 158);
+        transition: ease 1s;
+        a{
+            color:  #ccc;
+            transition: ease 1s;
+        }
+    }
+}
+
+.button-darkness{
+    border: 3px solid rgb(0, 0, 0);
+    background-color: rgb(83, 28, 83);
+    transition: ease 1s;
+    
+    a{
+        color: rgb(206, 76, 230);
+        transition: ease 1s;
+    }
+
+    &:hover{
+        border: 3px solid rgb(83, 28, 83);
+        background-color: #333;
+        transition: ease 1s;
+
+        a{
+            color: rgb(247, 214, 247);
+            transition: ease 1s;
+        }
+    }
+
+
+}
+
+.button-unknown{
+
+}
+
+
 .back--button{
     background-color: aqua;
 }

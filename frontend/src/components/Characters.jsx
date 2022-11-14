@@ -4,6 +4,7 @@ import axios from "axios";
 import { Link } from "react-router-dom";
 import ReusableButton from "./Reusablebutton/Button";
 import ReusableNavbar from "./Reusablenavbar/Navbar";
+import Footer from "./ReusableFooter/Footer";
 
 const Characters = () => {
   const [characters, setCharacters] = useState([]);
@@ -36,16 +37,14 @@ const Characters = () => {
               >
                 <h2>{char.name}</h2>
                 <img src={char.img} alt={char.name} />
-                  {/* <Link to={`/characters/${char.name}`}>Ver detalles</Link> */}
-                  {/* Preguntar a Santi */}
-                  <ReusableButton texto={<Link to={`/characters/${char.name}`}>Ver detalles</Link>} clase='details--button'/>
+                  <ReusableButton texto={<Link to={`/characters/${char.name}`}>Ver detalles</Link>} clase={`details--button button-${char.role}`}/>
               </div>
             );
           })}
         ;
         </div>
       </main>
-      <footer>FOOOTER</footer>
+      <Footer />
     </div>
     
   );

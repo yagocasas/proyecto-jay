@@ -23,7 +23,7 @@ const Login = () => {
       <label>
         e-mail
         <input
-          type="text"
+          type="email"
           name="email"
           {...register("email", {
             required: "Introduce un email, por favor",
@@ -32,7 +32,6 @@ const Login = () => {
               message: "Introduce un email más largo",
             },
             pattern: {
-              value: /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/,
               message: "Introduce un email con formato válido",
             },
           })}
@@ -45,9 +44,9 @@ const Login = () => {
       </> : null};
       <label>
         Password
-        <input type="text" name="password" {...register('password', {
+        <input type="password" name="password" {...register('password', {
             required: "Introduce tu contraseña",
-            pattern: {value: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?!.*\s).*$/,} 
+           
         }) } />
       </label>
       {errors.password ? <p>Password incorrecto</p> : null}
@@ -55,7 +54,7 @@ const Login = () => {
         Username
         <input type="text" name="userName" {...register("userName", {
             required: "Introduce tu nombre de usuario",
-            pattern: {value: /^[a-zA-Z][a-zA-Z0-9-_.]{1,20}$/},
+            
         })} />
       </label>
       {errors.userName ? <p>Username inválido</p> : null}

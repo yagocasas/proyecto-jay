@@ -10,6 +10,27 @@
     flex-direction: column;
     padding: 100px;
     padding-top: 200px;
+    
+
+    .botonlogout{
+        color: white;
+        font-weight: bolder;
+        font-size: 40px;
+        text-decoration: none;
+        background-color: transparent;
+        border: none;
+        font-family: "Merienda";
+        cursor: pointer;
+        margin-left: 35px;
+        text-align: left;
+
+        &:hover{
+            color: rgb(126, 6, 116);
+            transition:text-shadow 0.5s;
+            text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px, #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
+            }
+
+    }
     .navbar--list{
         list-style: none;
         li .navbar--link{
@@ -23,6 +44,7 @@
             text-shadow: #FFF 0px 0px 5px, #FFF 0px 0px 10px, #FFF 0px 0px 15px, #991859 0px 0px 20px, #9e1d5e 0px 0px 30px, #9e1d5e 0px 0px 40px, #9e1d5e 0px 0px 50px, #9e1d5e 0px 0px 75px;
             }
         }
+        
         
     }
     }
