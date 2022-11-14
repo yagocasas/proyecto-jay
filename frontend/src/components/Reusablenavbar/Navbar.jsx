@@ -12,11 +12,12 @@ const ReusableNavbar = ({clase}) => {
         <li><Anchor nav='/characters' texto='Personajes' type='navbar--link'/></li>
         <li><Anchor nav='/login' texto='Iniciar Sesión' type='navbar--link'/></li>
         <li><Anchor nav='/register' texto='Regístrate' type='navbar--link'/></li>
+        <li><ButtonLogout/></li>
+    
       {/* <input></input> */}
       {/* preguntar a santi */}
       {/* <Anchor texto='Detalles' type='navbar--link'/> */}
       </ul>
-      <ButtonLogout/>
     </nav>
   )
 }

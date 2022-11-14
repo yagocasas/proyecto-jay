@@ -1,63 +1,105 @@
-.character--main{
-    .characterDetail--navbar{
-        width: 100%;
+.character--main {
+  .characterDetail--navbar {
+    width: 100%;
+    display: flex;
+    justify-content: end;
+    align-items: center;
+    background-color: rgb(6, 6, 44);
+    button {
+      width: 60px;
+      margin-left: 50px;
+      margin-bottom: 15px;
+      align-self: flex-start;
+    }
+    ul {
+      display: flex;
+      justify-content: flex-end;
+      margin-right: 20px;
+      li {
+        display: flex;
+        justify-content: center;
+        list-style: none;
+        border: 1px solid white;
+        margin: 10px;
+        width: 150px;
+        padding: 5px;
+        border-radius: 10px;
+        text-align: center;
+        transition: ease 1s;
+        cursor: pointer;
+
+        a {
+          color: white;
+          text-decoration: none;
+          font-weight: 700;
+          transition: ease 1s;
+        }
+        &:hover {
+          background-color: white;
+          border-color: rgb(6, 6, 44);
+          transition: ease 1s;
+
+          a {
+            color: rgb(6, 6, 44);
+            transition: ease 1s;
+          }
+        }
+      }
+    }
+    .botonlogout {
+      width: 200px;
+      float: right;
+      // margin-right: 30px;
+      border: 1px solid white;
+      width: 150px;
+      padding: 5px;
+      border-radius: 10px;
+      text-align: center;
+      transition: ease 1s;
+      cursor: pointer;
+      color: white;
+      font-weight: 700;
+      background-color: rgb(6, 6, 44);
+      font-family: "Merienda";
+
+      &:hover {
+        background-color: white;
+        border-color: rgb(6, 6, 44);
+        transition: ease 1s;
+        color: rgb(6, 6, 44);
+      }
+    }
+  }
+  height: 100vh;
+  background-color: brown;
+  .character {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    .character--card {
+      display: flex;
+      flex-direction: row;
+      .character--card--img {
         display: flex;
         flex-direction: column;
-        justify-content: center;
         align-items: center;
-        background-color: black;
-        button{
-            width: 60px;
-            margin-left: 50px;
-            margin-bottom: 15px;
-            align-self: flex-start;
+        margin-right: 25px;
+        div {
+          height: 400px;
+          width: 250px;
+          img {
+            object-fit: contain;
+            height: 90%;
+            width: 90%;
+          }
         }
-        ul{
-            display: flex;
-            flex-direction: row;
-            list-style: none;
-            li{
-                padding: 10px;
-                
-                a{
-                    text-decoration: none;
-                    color: white;
-                }
-            }
-        }
-    }
-    height: 100vh;
-    background-color: brown;
-    .character{
+      }
+      .character--card--text {
+        height: 100px;
         display: flex;
         flex-direction: column;
-        justify-content: center;
-        align-items: center;
-        .character--card{
-            display: flex;
-            flex-direction: row;
-            .character--card--img{
-                display: flex;
-                flex-direction: column;
-                align-items: center;
-                margin-right: 25px;
-                div{
-                    height: 400px;
-                    width: 250px;
-                    img{
-                        object-fit: contain;
-                        height: 90%;
-                        width: 90%;
-                    }
-                }
-            }
-            .character--card--text{
-                height: 100px;
-                display: flex;
-                flex-direction:column;
-            }
-        }
-        
-        
+      }
     }
+  }
 }

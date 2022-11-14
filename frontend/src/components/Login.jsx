@@ -54,6 +54,7 @@ const Login = () => {
         Username
         <input type="text" name="userName" {...register("userName", {
             required: "Introduce tu nombre de usuario",
+            pattern: /^[a-zA-Z][a-zA-Z0-9.-]{1,20}$/,
             
         })} />
       </label>
