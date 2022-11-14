@@ -23,8 +23,7 @@ function App() {
         <Routes>
           <Route path="/" element={<Home/>}/>
           <Route path="/characters" element={<Characters />}/>
-          <Route path="/characters/:name" element={<CharacterDetails />}/>
-          {/*para maquetar vas a necesitar sacar el authroute*/}{/*<AuthRoute component=*/}
+          <Route path="/characters/:name" element={<AuthRoute component= {<CharacterDetails />}/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
         </Routes>

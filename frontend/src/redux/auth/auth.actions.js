@@ -38,13 +38,13 @@ export const newUser = (formdata, navigate) => async (dispatch) => {
 export const checkSession = (token, navigate) => async (dispatch) => {
   dispatch({ type: "checkSession_start" });
   try {
-    const result = await API.post("checkSession");
+    const result = await API.post("users/checkSession");
     dispatch({
       type: "checkSession_ok",
       payload: { user: result.data, token: token },
     });
     localStorage.setItem("token", token);
-    navigate(" ");
+    navigate("/");
   } catch (error) {
     dispatch({ type: "checkSession_error" });
     localStorage.removeItem("token");

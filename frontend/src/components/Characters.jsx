@@ -5,23 +5,28 @@ import { Link } from "react-router-dom";
 import ReusableButton from "./Reusablebutton/Button";
 import ReusableNavbar from "./Reusablenavbar/Navbar";
 import Footer from "./ReusableFooter/Footer";
+import { useDispatch } from "react-redux";
+import { getCharacters } from "../redux/characters/charactersFunctions";
+import { useSelector } from "react-redux";
 
 const Characters = () => {
-  const [characters, setCharacters] = useState([]);
-  useEffect(() => {
-    const getCharacters = async () => {
-      const res = await axios.get("http://localhost:5000/characters");
-      setCharacters(res.data);
-    };
 
-    getCharacters();
-  }, []);
+
+  const dispatch = useDispatch([])
+  const {characters, isLoading, error} = useSelector((state) => state.characters);
+  useEffect(() => {
+    dispatch(getCharacters('/'));
+},[]);
+
 
   return (
     <div className="container">
     <ReusableNavbar clase='navbar'/>
       <main>
         <div className="characters">
+        {isLoading && ("Cargando...")}
+        {error && ("Error al cargar")}
+        {console.log(characters)}
         {characters &&
           characters.map((char) => {
             return (
@@ -41,7 +46,6 @@ const Characters = () => {
               </div>
             );
           })}
-        ;
         </div>
       </main>
       <Footer />

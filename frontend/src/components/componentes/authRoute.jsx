@@ -3,7 +3,7 @@ import { useSelector } from 'react-redux'
 import { Navigate } from 'react-router-dom'
 
 const AuthRoute = ({component}) => {
-    const {user, token} = useSelector(state => state.auth)
+    const {user, token} = useSelector((state) => state.auth)
     if(user === null) return(<Navigate to="/login"/>);
     if(user) return component
     }

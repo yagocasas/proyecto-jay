@@ -1,11 +1,13 @@
 import { applyMiddleware, combineReducers, createStore } from "redux";
 import { composeWithDevTools } from "redux-devtools-extension";
 import thunk from "redux-thunk";
-import characterReducer from "./characters/characterReducer";
+import charactersReducer from "./characters/charactersReducer";
+import authReducer from "./auth/auth.reducer";
 
 
 const rootReducer = combineReducers({
-    characters: characterReducer,
+    auth: authReducer,
+    characters: charactersReducer,
 });
 
 const store = createStore(rootReducer, composeWithDevTools(applyMiddleware(thunk)));
