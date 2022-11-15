@@ -13,7 +13,7 @@ const ButtonLogout = () => {
     }
 
     return (
-        <ReusableButton funcion={logOut} clase='botonlogout' texto='LogOut'/>
+        <ReusableButton funcion={logOut} clase='botonlogout' texto='Cerrar Sesión'/>
     )
 }
 

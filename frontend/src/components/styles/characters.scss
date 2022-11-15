@@ -4,12 +4,28 @@
   grid-template-columns: repeat(3, 1fr);
   justify-items: center;
   gap: 20px;
-  width: 90%;
+  width: 98%;
+  padding: 15px 0;
 }
 
+.navbar--img{
+  display: block;
+  height: 150px;
+}
 
 .navbar{
   height: 150px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  ul{
+    li{
+      height:40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+  }
 }
 
 .card {
@@ -48,13 +64,6 @@
     rgb(255, 255, 255) 119%
   );
   
-
-  h2 {
-   
-  }
-
-  img {
-  }
 }
 
 .dark {

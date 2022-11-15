@@ -16,7 +16,7 @@ export const logoutUser = (navigate) => async (dispatch) => {
   dispatch({ type: "logout_user_start" });
   try {
     dispatch({ type: "logout_user_ok" });
-    localStorage.clear(); //se puede eliminar el removeItem??
+    localStorage.clear();
     alert("Sesión cerrada correctamente");
     navigate("/");
   } catch (error) {
@@ -44,7 +44,6 @@ export const checkSession = (token, navigate) => async (dispatch) => {
       payload: { user: result.data, token: token },
     });
     localStorage.setItem("token", token);
-    navigate("/");
   } catch (error) {
     dispatch({ type: "checkSession_error" });
     localStorage.removeItem("token");

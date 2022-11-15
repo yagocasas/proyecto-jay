@@ -9,7 +9,8 @@ import { checkSession } from "./redux/auth/auth.actions";
 import Login from "./components/Login";
 import Register from "./components/Register";
 import AuthRoute from "./components/componentes/authRoute";
-import EditCharacters from "./components/componentes/EditCharacters/EditCharacters";
+import NewCharacter from "./components/componentes/EditCharacters/NewCharacter/NewCharacter";
+import AuthAdmin from "./components/componentes/authAdmin";
 
 function App() {
   const dispatch = useDispatch();
@@ -27,7 +28,7 @@ function App() {
           <Route path="/characters/:name" element={<AuthRoute component= {<CharacterDetails />}/>}/>
           <Route path="/login" element={<Login />}/>
           <Route path="/register" element={<Register />}/>
-          <Route path="/editCharacter" element={<AuthRoute component={<EditCharacters/>}/>}/>
+          <Route path="/newCharacter" element={<AuthAdmin component={<NewCharacter/>}/>}/>
         </Routes>
     </div>
   );

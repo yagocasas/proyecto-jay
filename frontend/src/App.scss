@@ -28,7 +28,7 @@
 
         li {
           list-style: none;
-          border: 1px solid white;
+          border: 1px solid rgb(216,184,104);
           margin: 10px;
           width: 150px;
           padding: 5px;
@@ -38,13 +38,13 @@
           cursor: pointer;
 
           a {
-            color: white;
+            color: rgb(216,184,104);
             text-decoration: none;
             font-weight: 700;
             transition: ease 1s;
           }
           &:hover {
-            background-color: white;
+            background-color: rgb(216,184,104) ;
             border-color: rgb(6, 6, 44);
             transition: ease 1s;
 
@@ -87,7 +87,7 @@
       flex-direction: column;
       align-items: center;
       grid-area: main;
-      width: 80%;
+      width: 100%;
       margin: 0 auto;
       margin-top: 90px;
       background-image: url("https://cdn.wallpapersafari.com/49/68/b8qzY4.jpg");

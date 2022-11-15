@@ -3,6 +3,9 @@ import { useForm } from 'react-hook-form'
 import { useDispatch } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { newUser } from '../redux/auth/auth.actions';
+import './styles/Register.scss'
+import ReusableNavbar from './Reusablenavbar/Navbar'
+import ReusableImg from './ReusableImage/ReusableImg';
 
 const Register = () => {
     const { register, handleSubmit, formState: {errors, isValid}} = useForm();
@@ -15,7 +18,11 @@ const Register = () => {
 
 
   return (
-    <form onSubmit= {handleSubmit(registerUser)}>
+    <>
+      <ReusableNavbar clase='navbar--register'/>
+      <main className='main--register'>
+      <form onSubmit= {handleSubmit(registerUser)}>
+      <ReusableImg enlace='/assets/imagenes/Crown.png' logo='Corona' clase='img--crown'/>
         <label>
             e-mail
             <input
@@ -37,7 +44,7 @@ const Register = () => {
         {errors.email.type === "minLength" && <p>{errors.email.message}</p>}
         {errors.email.type === "pattern" && <p>{errors.email.message}</p>}
         {/*cómo manejamos que ya exista un mail? */}
-      </> : null};
+      </> : null}
         </label>
         <label>
         Password
@@ -60,6 +67,10 @@ const Register = () => {
       {errors.userName ? <p>Username inválido</p> : null}
       <button type="submit" disabled={!isValid}>Enviar</button>
     </form>
+    </main>
+    </>
+    
+    
   )
 }
 

@@ -4,6 +4,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { filterCharacter, getCharacters } from '../redux/characters/charactersFunctions';
 import ReusableButton from './Reusablebutton/Button';
 import ReusableNavbar from './Reusablenavbar/Navbar';
+import Footer from './ReusableFooter/Footer';
 import './styles/characterDetails.scss'
 
 const CharacterDetails = () => {
@@ -36,10 +37,9 @@ const CharacterDetails = () => {
                         <p>{character.role}</p>
                       </div>
                     </div>
-                    
-                    <p>Componente Origin</p>
                     <ReusableButton texto='Back' funcion={() => navigate('/characters')} clase='back--button'/>
                 </div>}
+      <Footer />
     </div>
   )
 }
