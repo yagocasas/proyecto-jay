@@ -12,7 +12,7 @@ const NewCharacter = () => {
 
     const postCharacter = (datos) => {
         const formData = new FormData();
-        formData.append("nombre", datos.name);
+        formData.append("name", datos.name);
         formData.append("gender", datos.gender);
         formData.append("role", datos.role);
         formData.append("weapons", datos.weapons);

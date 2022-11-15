@@ -4,6 +4,7 @@ import { useDispatch } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import { loginUser } from "../redux/auth/auth.actions";
 import ReusableNavbar from "./Reusablenavbar/Navbar";
+import ReusableImg from "./ReusableImage/ReusableImg";
 import './styles/Login.scss';
 
 const Login = () => {
@@ -24,11 +25,10 @@ const Login = () => {
     <>
     <ReusableNavbar clase='navbar--login'/>
     <main className="div--main--login">
-    <div className="div--imagen--login">
-      <img src='/assets/imagenes/Trono.png' alt='Trono'></img>
-    </div>
+    <ReusableImg enlace='/assets/imagenes/Trono.png' logo='Trono' clase='div--imagen--login'/>
     <div className="div--form--login">
       <form onSubmit={handleSubmit(login)}>
+      <ReusableImg enlace='/assets/imagenes/Crown.png' logo='Corona' clase='img--crown'/>
       <label>
         e-mail
         <input
